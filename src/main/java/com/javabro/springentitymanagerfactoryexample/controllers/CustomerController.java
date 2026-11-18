@@ -2,9 +2,9 @@ package com.javabro.springentitymanagerfactoryexample.controllers;
 
 import com.javabro.springentitymanagerfactoryexample.model.Customer;
 import com.javabro.springentitymanagerfactoryexample.service.CustomerService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class CustomerController {
@@ -23,5 +23,15 @@ public class CustomerController {
     @GetMapping("/customers/V2/{customerId}")
     public Customer getCustomerByIdV2(@PathVariable Long customerId) {
         return customerService.getCustomerByIdV2(customerId);
+    }
+
+    @GetMapping("/customers")
+    public List<Customer> getAllCustomers() {
+       return customerService.getAllCustomers();
+    }
+
+    @PostMapping("/customers")
+    public Customer createCustomer(@RequestBody Customer customer) {
+        return customerService.persistCustomer(customer);
     }
 }

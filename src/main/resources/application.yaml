@@ -6,3 +6,17 @@ spring:
     username: root
     password: welcome123
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    org:
+      springframework:
+        orm: DEBUG
+        web: DEBUG
+        jdbc: DEBUG
+        transaction: DEBUG
+    com:
+     javabro:
+       springentitymanagerfactoryexample: DEBUG
+
+

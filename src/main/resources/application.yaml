@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spring-entity-manager-factory-example
+  datasource:
+    url: jdbc:mysql://localhost:3306/entity_manager_factory_example_db
+    username: root
+    password: welcome123
+    driver-class-name: com.mysql.cj.jdbc.Driver
